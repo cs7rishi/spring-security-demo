@@ -19,11 +19,22 @@ public class SecurityConfig {
         return http.build();
     }
 
+    //Configuration to deny all the request
+    //Why application is asking for credential
+    //Because for authentication passes(correct credentials), but authorization fails
+    /*@Bean
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests((requests) -> requests.anyRequest().denyAll())
+            .formLogin(withDefaults()).httpBasic(withDefaults());
+        return http.build();
+    }*/
 
-    //    @Bean
-    //    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-    //        http.authorizeHttpRequests((requests) -> requests.anyRequest().denyAll())
-    //            .formLogin(withDefaults()).httpBasic(withDefaults());
-    //        return http.build();
-    //    }
+    //Configuration to authorize all the request
+    /*@Bean
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(
+                (requests) -> requests.anyRequest().permitAll())
+            .formLogin(withDefaults()).httpBasic(withDefaults());
+        return http.build();
+    }*/
 }
