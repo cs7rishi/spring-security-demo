@@ -18,4 +18,12 @@ public class SecurityConfig {
             .formLogin(withDefaults()).httpBasic(withDefaults());
         return http.build();
     }
+
+
+    //    @Bean
+    //    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+    //        http.authorizeHttpRequests((requests) -> requests.anyRequest().denyAll())
+    //            .formLogin(withDefaults()).httpBasic(withDefaults());
+    //        return http.build();
+    //    }
 }
